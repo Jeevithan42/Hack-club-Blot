@@ -98,6 +98,7 @@ for (let a = 0; a < 2; a++){
      t.down();
      t.forward(3);
     t.right(90);
+    
   };
 
 t.left(90);
@@ -105,6 +106,59 @@ t.up()
 t.forward(3)
 }
 
+  //Face
+const eye1 = bt.catmullRom([[17,98], [18,97], [17,96], [16,97], [17,98]]);
+
+const eye2 = bt.catmullRom([[22.5,96], [23.5,95], [22.5,94], [21.5,95], [22.5,96]]);
+
+const smile = bt.catmullRom([[15,93], [19,91], [23,92]]);
+
+const nose = [[17,93], [17,95], [21, 94], [17,93]]
+
+  //Hat
+t.up()
+t.goTo([19.5, 99]);
+t.down();
+
+t.right(90);
+t.forward(7.5);
+t.left(90);
+t.forward(5);
+t.left(90);
+t.forward(2.5);
+t.right(90);
+t.forward(10);
+t.left(90);
+t.forward(10);
+t.left(90);
+t.forward(10);
+t.right(90);
+t.forward(2.5);
+t.left(90);
+t.forward(5);
+t.left(90);
+t.forward(7.5);
+
+
+// Snow
+
+
+const num_of_flakes = bt.randIntInRange(5, 8)
+
+
+for (let n = 0; n < (num_of_flakes + 1); n++){
+  const length = bt.randIntInRange(3, 5);
+  t.up();
+  t.goTo([bt.randIntInRange(0, 125),bt.randIntInRange(40, 125)]);
+  t.down();
+  for (let i = 1; i < 13; i++){
+    t.forward(length);
+    t.left(180);
+    t.forward(length);
+    t.left(45*i);
+  };
+  
+};
 
 // draw it
 drawLines(polyline);
@@ -113,4 +167,8 @@ drawLines([curve]);
 drawLines([ball1]);
 drawLines([ball2]);
 drawLines([ball3]);
-drawLines(t.lines(),options = {fill = 'black'});
+drawLines(t.lines(),'black');
+drawLines([eye1]);
+drawLines([eye2]);
+drawLines([smile]);
+drawLines([nose]);
