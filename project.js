@@ -160,6 +160,32 @@ for (let n = 0; n < (num_of_flakes + 1); n++){
   
 };
 
+
+// Window
+t.up();
+t.goTo([9,42]);
+t.down();
+t.setAngle(360);
+for (let i = 0; i < 9; i++){
+ t.forward(7);
+  t.right(45);
+}
+t.up();
+t.right(70);
+t.forward(4.94)
+t.setAngle(180);
+t.down()
+for (let i = 0; i < 9; i++){
+  t.forward(2.899);
+  t.right(65);
+  t.forward(4.94);
+  t.right(180);
+  t.forward(4.94);
+  t.setAngle(180);
+  t.left(45*(i+1));
+  
+}
+
 // draw it
 drawLines(polyline);
 drawLines(t.lines());
@@ -167,7 +193,7 @@ drawLines([curve]);
 drawLines([ball1]);
 drawLines([ball2]);
 drawLines([ball3]);
-drawLines(t.lines(),'black');
+drawLines(t.lines());
 drawLines([eye1]);
 drawLines([eye2]);
 drawLines([smile]);
